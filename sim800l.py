@@ -81,14 +81,15 @@ class SIM800L:
 
         self.set_msg()
 
-        for i in range(1, 10):
+        for i in range(1, 6):
             self.logger.debug("iteration {}".format(i))
+            time.sleep(0.5)
             cmd = 'AT+CMGR={}\n'.format(i)
             # write async_command
             self.ser.write(cmd.encode())
             b = []
 
-            for _ in range(6):
+            for _ in range(7):
                 x = self.ser.readline()
                 self.logger.debug("Read line raw:{}".format(x))
                 line = convert_to_string(x)
