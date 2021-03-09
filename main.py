@@ -13,7 +13,6 @@ from argparse import ArgumentParser
 LAMBDA_ARN = "arn:aws:lambda:eu-west-1:357832308593:function:sms_to_email"
 
 
-
 def set_parser():
     parser = ArgumentParser()
     parser.add_argument(
@@ -49,6 +48,7 @@ def main():
         sleep(3)
         for s in sms:
             if s:
+                sim800l.write_to_file(s)
                 client.send(s)
 
 if __name__ == "__main__":
