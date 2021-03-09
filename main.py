@@ -45,7 +45,7 @@ def main():
     while True:
         print("reading:{}".format(datetime.datetime.now()))
         sms=sim800l.read_sms()
-        sleep(3)
+        sleep(1)
         for s in sms:
             if s:
                 sim800l.write_to_file(s)
