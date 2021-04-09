@@ -44,8 +44,8 @@ def main(event, context):
     client = boto3.client('ses')
 
     # This address must be verified with Amazon SES.
-    SENDER = "aghidel@icloud.com"
-    RECIPIENT = "ghidel.ady@gmail.com"
+    SENDER = ""
+    RECIPIENT = ""
 
     # Sanitize the input
     if "SMS" in event:
